@@ -1,0 +1,1 @@
+setStatusbarText("Tibia Lua unloaded!")
