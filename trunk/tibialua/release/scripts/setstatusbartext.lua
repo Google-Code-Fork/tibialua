@@ -1,1 +1,0 @@
-setStatusbarText("Tibia Lua!")
