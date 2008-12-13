@@ -1,0 +1,3 @@
+#include "resource.h"
+
+ID_ICON_APPLICATION ICON DISCARDABLE "lua.ico"

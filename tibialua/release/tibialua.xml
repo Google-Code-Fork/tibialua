@@ -1,0 +1,98 @@
+<?xml version="1.0" ?>
+<scripts>
+    <script filename="levelspy.lua" name="Level Spy">
+        <hotkey id="106" name="*" />
+        <timer delay="0" startenabled="0" />
+        <menu visible="1" />
+    </script>
+    <script filename="levelspyup.lua" name="Level Spy Up">
+        <hotkey id="107" name="+" />
+        <timer delay="0" startenabled="0" />
+        <menu visible="1" />
+    </script>
+    <script filename="levelspydown.lua" name="Level Spy Down">
+        <hotkey id="109" name="-" />
+        <timer delay="0" startenabled="0" />
+        <menu visible="1" />
+    </script>
+    <script filename="separator" name="">
+        <hotkey id="" name="" />
+        <timer delay="" startenabled="" />
+        <menu visible="" />
+    </script>
+    <script filename="namespy.lua" name="Name Spy">
+        <hotkey id="111" name="/" />
+        <timer delay="0" startenabled="0" />
+        <menu visible="1" />
+    </script>
+    <script filename="showinvisiblecreatures.lua" name="Show Invisible Creatures">
+        <hotkey id="110" name="Del" />
+        <timer delay="0" startenabled="0" />
+        <menu visible="1" />
+    </script>
+    <script filename="fulllight.lua" name="Full Light">
+        <hotkey id="96" name="Ins" />
+        <timer delay="0" startenabled="0" />
+        <menu visible="1" />
+    </script>
+    <script filename="separator" name="">
+        <hotkey id="" name="" />
+        <timer delay="" startenabled="" />
+        <menu visible="" />
+    </script>
+    <script filename="exptolevelup.lua" name="Exp To Level Up">
+        <hotkey id="36" name="Home" />
+        <timer delay="0" startenabled="0" />
+        <menu visible="1" />
+    </script>
+    <script filename="treestobushes.lua" name="Trees To Bushes">
+        <hotkey id="0" name="" />
+        <timer delay="0" startenabled="0" />
+        <menu visible="1" />
+    </script>
+    <script filename="separator" name="">
+        <hotkey id="" name="" />
+        <timer delay="" startenabled="" />
+        <menu visible="" />
+    </script>
+    <script filename="randomoutfit.lua" name="Random Outfit">
+        <hotkey id="35" name="End" />
+        <timer delay="0" startenabled="0" />
+        <menu visible="1" />
+    </script>
+    <script filename="nextoufit.lua" name="Next Outfit">
+        <hotkey id="33" name="Page Up" />
+        <timer delay="0" startenabled="0" />
+        <menu visible="1" />
+    </script>
+    <script filename="previousoutfit.lua" name="Previous Outfit">
+        <hotkey id="34" name="Page Down" />
+        <timer delay="0" startenabled="0" />
+        <menu visible="1" />
+    </script>
+    <script filename="outfitaddons.lua" name="Outfit Addons" >
+        <hotkey id="0" name="" />
+        <timer delay="1000" startenabled="1" />
+        <menu visible="1" />
+    </script>
+    <script filename="separator" name="">
+        <hotkey id="" name="" />
+        <timer delay="" startenabled="" />
+        <menu visible="" />
+    </script>
+    <script filename="cockroaches.lua" name="Cockroaches">
+        <hotkey id="0" name="" />
+        <timer delay="1000" startenabled="1" />
+        <menu visible="1" />
+    </script>
+    <script filename="separator" name="">
+        <hotkey id="" name="" />
+        <timer delay="" startenabled="" />
+        <menu visible="" />
+    </script>
+    <script filename="helloworld.lua" name="Hello World">
+        <hotkey id="0" name="" />
+        <timer delay="0" startenabled="0" />
+        <menu visible="1" />
+    </script>
+</scripts>
