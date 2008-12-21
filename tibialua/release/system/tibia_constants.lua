@@ -48,7 +48,7 @@ MIN_OUTFIT           = 2    -- lowest possible outfit before client crashes
 
 -- maximum
 MAX_MAP_TILES        = 2016 -- = (18 * 14 * 8) = (x * y * z)
-MAX_MAP_TILE_OBJECTS = 13   -- objects on a tile
+MAX_MAP_TILE_OBJECTS = 13   -- number of objects on a tile
 MAX_LOGIN_SERVERS    = 10
 MAX_CREATURES        = 250
 MAX_OUTFIT           = 326  -- highest possible outfit before client crashes
@@ -61,10 +61,10 @@ STEP_LOGIN_SERVER = 112
 STEP_CREATURE     = 160
 
 -- offsets to variables from map pointer step
-OFFSET_MAP_COUNT       = 0  -- number of items existing on the tile
-OFFSET_MAP_TILE_ID     = 4
-OFFSET_MAP_OBJECT_ID   = 16 -- creature id or item id
-OFFSET_MAP_OBJECT_DATA = 20 -- id OR stacked or grouped item count
+OFFSET_MAP_TILE_OBJECT_COUNT = 0  -- number of objects on tile
+OFFSET_MAP_TILE_ID           = 4
+OFFSET_MAP_OBJECT_ID         = 16
+OFFSET_MAP_OBJECT_DATA       = 20 -- unique id OR stacked or grouped item count
 
 -- offsets to variables from login server step
 OFFSET_LOGIN_SERVER_PORT = 100
