@@ -55,6 +55,11 @@
         <timer delay="" startenabled="" />
         <menu visible="" />
     </script>
+    <script filename="rainbowoutfit.lua" name="Rainbow Outfit">
+        <hotkey id="0" name="" />
+        <timer delay="100" startenabled="0" />
+        <menu visible="1" />
+    </script>
     <script filename="randomoutfit.lua" name="Random Outfit">
         <hotkey id="35" name="End" />
         <timer delay="0" startenabled="0" />
