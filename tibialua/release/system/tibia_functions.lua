@@ -52,10 +52,28 @@ function tibia_isfulllightenabled()
     end
 end
 
+-- check if outfit is male
+function tibia_isoutfitmale(outfit)
+    for i = 1, table.getn(OUTFITS_MALE) do
+        if outfit == OUTFITS_MALE[i] then
+            return true
+        end
+    end
+end
+
+-- check if outfit is female
+function tibia_isoutfitfemale(outfit)
+    for i = 1, table.getn(OUTFITS_FEMALE) do
+        if outfit == OUTFITS_FEMALE[i] then
+            return true
+        end
+    end
+end
+
 -- check if outfit will cause client crash
 function tibia_isoutfiterror(outfit)
-    for i = 1, table.getn(OUTFIT_ERROR) do
-        if outfit == OUTFIT_ERROR[i] then
+    for i = 1, table.getn(OUTFITS_ERROR) do
+        if outfit == OUTFITS_ERROR[i] then
             return true
         end
     end
@@ -67,6 +85,8 @@ function tibia_isoutfiterror(outfit)
 
     return false
 end
+
+-- check if outfit is male
 
 -- get map pointer
 function tibia_getmappointer()
