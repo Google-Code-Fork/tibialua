@@ -45,9 +45,19 @@
         <timer delay="0" startenabled="0" />
         <menu visible="1" />
     </script>
+    <script filename="separator" name="">
+        <hotkey id="" name="" />
+        <timer delay="" startenabled="" />
+        <menu visible="" />
+    </script>
     <script filename="treestobushes.lua" name="Trees To Bushes">
         <hotkey id="0" name="" />
         <timer delay="0" startenabled="0" />
+        <menu visible="1" />
+    </script>
+    <script filename="showfishingwater.lua" name="Show Fishing Water">
+        <hotkey id="0" name="" />
+        <timer delay="1000" startenabled="0" />
         <menu visible="1" />
     </script>
     <script filename="separator" name="">
