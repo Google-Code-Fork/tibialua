@@ -1,3 +1,3 @@
-tibialua_console.exe cockroaches.lua
+tibialua_console.exe helloworld.lua
 PAUSE
 

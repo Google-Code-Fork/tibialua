@@ -1,8 +1,5 @@
 --[[ Tibia 8.40 ]]--
 
--- multi client
-MULTI_CLIENT        = 0x00505924
-
 -- rsa key
 RSA_KEY             = 0x005AB610
 
@@ -39,6 +36,10 @@ CREATURES_END       = 0x006359D0 -- = CREATURES_BEGIN + (STEP_CREATURE * MAX_CRE
 -- containers
 CONTAINERS_BEGIN    = 0x00638160
 CONTAINERS_END      = 0x00000000 -- = CONTAINERS_BEGIN + (STEP_CONTAINER * MAX_CONTAINERS)
+
+-- vips
+VIPS_BEGIN          = 0x00629A50
+VIPS_END            = 0x0062AB80 -- = VIPS_BEGIN + (STEP_VIP * MAX_VIPS)
 
 -- level spy
 LEVELSPY1           = 0x004EE02A

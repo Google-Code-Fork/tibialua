@@ -87,7 +87,7 @@
     </script>
     <script filename="cockroaches.lua" name="Cockroaches">
         <hotkey id="0" name="" />
-        <timer delay="1000" startenabled="1" />
+        <timer delay="1000" startenabled="0" />
         <menu visible="1" />
     </script>
     <script filename="separator" name="">
