@@ -60,6 +60,7 @@ function tibia_isoutfiterror(outfit)
         end
     end
 
+    -- check if outfit is out of range
     if outfit < MIN_OUTFIT or outfit > MAX_OUTFIT then
         return true
     end
@@ -199,7 +200,7 @@ function tibia_setlevelspy(enabled)
         tibia_writenops(LEVELSPY_NOP, 2)
 
         -- initialize level spy
-        tibia_dolevelspyinit()
+        tibia_dolevelspyinitialize()
     else
         -- disable level spy by restoring default values
         tibia_writebytes(LEVELSPY_NOP, LEVELSPY_NOP_DEFAULT, 2)
@@ -249,7 +250,7 @@ function tibia_setfulllight(enabled)
 end
 
 -- initialize level spy
-function tibia_dolevelspyinit()
+function tibia_dolevelspyinitialize()
     -- get player z
     local playerZ = tibia_getplayerz()
 
