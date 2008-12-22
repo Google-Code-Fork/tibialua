@@ -1,5 +1,5 @@
 -- level spy must be enabled
-if tibia_islevelspyenabled() == 0 then
+if tibia_islevelspyenabled() == false then
     tibia_setstatusbartext("Please enable Level Spy first!")
     return
 end
