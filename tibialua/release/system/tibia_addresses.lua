@@ -68,3 +68,5 @@ PLAYER_LEVEL        = 0x0062BD20
 PLAYER_EXP          = 0x0062BD24
 PLAYER_ID           = 0x0062BD30 -- unique id
 PLAYER_Z            = 0x0063AA50
+PLAYER_Y            = 0x0063AA54
+PLAYER_X            = 0x0063AA58
