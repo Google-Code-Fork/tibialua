@@ -123,6 +123,16 @@ function tibia_getplayerz()
     return tibia_readbytes(PLAYER_Z, 1)
 end
 
+-- get player y
+function tibia_getplayery()
+    return tibia_readbytes(PLAYER_Y, 4)
+end
+
+-- get player x
+function tibia_getplayerx()
+    return tibia_readbytes(PLAYER_X, 4)
+end
+
 -- get player offset
 function tibia_getplayeroffset(offset, bytes)
     -- search through creatures
