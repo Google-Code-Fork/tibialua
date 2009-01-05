@@ -43,7 +43,7 @@ Tibia.Addresses.Creatures =
 Tibia.Addresses.Containers =
 {
     Begin = 0x00638160,
-    End   = 0x00000000 -- = begin + (step * max)
+    End   = 0x0063A020 -- = begin + (step * max)
 }
 
 -- vips
