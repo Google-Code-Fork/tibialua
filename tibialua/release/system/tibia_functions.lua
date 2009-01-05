@@ -174,7 +174,7 @@ end
 -- set player offset
 function Tibia:SetPlayerOffset(offset, value, bytes)
     -- search through creatures
-    for i = Tibia.Addresses.Creatures.Begin, Tibia.Addresses.Creatures.End, Tibia.Constants.Creatures.Step do
+    for i = Tibia.Addresses.Creatures.Begin, Tibia.Addresses.Creatures.End, Tibia.Constants.Creatures.StepA do
         -- get creature id
         local creatureId = tibia_readbytes(i + Tibia.Constants.Creatures.OffsetId, 3)
 

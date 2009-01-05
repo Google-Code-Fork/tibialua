@@ -112,8 +112,14 @@ void doScriptExecute(std::string fileName)
         // open log
         std::fstream file("tibialua.log", std::ios::out | std::ios::app);
 
+        // get time
+        time_t rawtime;
+        struct tm *timeinfo;
+        time(&rawtime);
+        timeinfo = localtime(&rawtime);
+
         // append error to log
-        file << lua_tostring(L, -1) << std::endl;
+        file << asctime(timeinfo) << lua_tostring(L, -1) << std::endl;
         lua_pop(L, 1);
 
         // close log

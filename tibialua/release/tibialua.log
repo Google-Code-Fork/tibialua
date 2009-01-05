@@ -1,12 +1,2 @@
-scripts/fulllight.lua:3: attempt to call method 'SetstatusbarText' (a nil value)
-scripts/fulllight.lua:3: attempt to call method 'SetstatusbarText' (a nil value)
-scripts/newbies.lua:2: 'for' step must be a number
-scripts/newbies.lua:2: 'for' step must be a number
-scripts/newbies.lua:2: 'for' step must be a number
-scripts/newbies.lua:2: 'for' step must be a number
-scripts/newbies.lua:2: 'for' step must be a number
-scripts/newbies.lua:2: 'for' step must be a number
-scripts/newbies.lua:2: 'for' step must be a number
-scripts/newbies.lua:32: attempt to index global 'OUTFIT_COLORS_NEWBIE' (a nil value)
-scripts/newbies.lua:32: attempt to index global 'OUTFIT_COLORS_NEWBIE' (a nil value)
-scripts/newbies.lua:32: attempt to index global 'OUTFIT_COLORS_NEWBIE' (a nil value)
+Mon Jan 05 15:36:20 2009
+.\system/tibia_functions.lua:177: 'for' step must be a number
