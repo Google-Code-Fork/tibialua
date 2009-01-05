@@ -29,10 +29,10 @@ for i = Tibia.Addresses.Creatures.Begin, Tibia.Addresses.Creatures.End, Tibia.Co
             tibia_writebytes(i + Tibia.Constants.Creatures.OffsetOutfitAddon, Tibia.Constants.OutfitAddons.None, 1)
 
             -- set creature outfit colors
-            tibia_writebytes(i + Tibia.Constants.Creatures.OffsetOutfitHead, OUTFIT_COLORS_NEWBIE[1], 1)
-            tibia_writebytes(i + Tibia.Constants.Creatures.OffsetOutfitBody, OUTFIT_COLORS_NEWBIE[2], 1)
-            tibia_writebytes(i + Tibia.Constants.Creatures.OffsetOutfitLegs, OUTFIT_COLORS_NEWBIE[3], 1)
-            tibia_writebytes(i + Tibia.Constants.Creatures.OffsetOutfitFeet, OUTFIT_COLORS_NEWBIE[4], 1)
+            tibia_writebytes(i + Tibia.Constants.Creatures.OffsetOutfitHead, Tibia.Constants.OutfitColors.Newbie[1], 1)
+            tibia_writebytes(i + Tibia.Constants.Creatures.OffsetOutfitBody, Tibia.Constants.OutfitColors.Newbie[2], 1)
+            tibia_writebytes(i + Tibia.Constants.Creatures.OffsetOutfitLegs, Tibia.Constants.OutfitColors.Newbie[3], 1)
+            tibia_writebytes(i + Tibia.Constants.Creatures.OffsetOutfitFeet, Tibia.Constants.OutfitColors.Newbie[4], 1)
         end
     end
 end
