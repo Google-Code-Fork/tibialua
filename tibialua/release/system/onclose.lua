@@ -1,5 +1,5 @@
 -- disable level spy
-tibia_setlevelspy(false)
+Tibia:SetLevelSpy(false)
 
 -- unloaded
-tibia_setstatusbartext("Tibia Lua unloaded!")
+Tibia:SetStatusbarText("Tibia Lua unloaded!")

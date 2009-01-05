@@ -1,2 +1,2 @@
 -- loaded
-tibia_setstatusbartext("Tibia Lua loaded!")
+Tibia:SetStatusbarText("Tibia Lua loaded!")
