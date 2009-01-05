@@ -298,9 +298,7 @@ void onCreate(HWND hwnd)
     tibialua_register_tibia_glue(L);
 
     // initialize tibia api
-    luaL_dofile(L, "system/tibia_addresses.lua");
-    luaL_dofile(L, "system/tibia_constants.lua");
-    luaL_dofile(L, "system/tibia_functions.lua");
+    luaL_dofile(L, "system/tibia.lua");
 
     // execute open script
     luaL_dofile(L, "system/onopen.lua");

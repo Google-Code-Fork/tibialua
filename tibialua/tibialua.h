@@ -9,7 +9,7 @@
 #include <windows.h>
 #include <shellapi.h>
 
-#include "tinyxml.h"
+#include "tibialua_xml.h"
 
 #include "tibialua_lua.h"
 
