@@ -96,11 +96,29 @@ void doScriptsLoad()
 // execute script
 void doScriptExecute(std::string fileName)
 {
+    // skip separator
+    if (fileName == "separator")
+        return;
+
     // get script location
     std::string scriptLocation = "scripts/" + fileName;
 
     // execute script
-    luaL_dofile(L, scriptLocation.c_str());
+    int error = luaL_dofile(L, scriptLocation.c_str());
+
+    // check for error
+    if (error)
+    {
+        // open log
+        std::fstream file("tibialua.log", std::ios::out | std::ios::app);
+
+        // append error to log
+        file << lua_tostring(L, -1) << std::endl;
+        lua_pop(L, 1);
+
+        // close log
+        file.close();
+    }
 }
 
 // register timers
