@@ -10,6 +10,16 @@ function Tibia:CalcExpToLevelUp()
     return Tibia:CalcExpForLevel(Tibia:GetPlayerLevel() + 1) - Tibia:GetPlayerExp()
 end
 
+-- check if online
+function Tibia:IsOnline()
+    local connectionStatus = tibia_readbytes(Tibia.Addresses.Client.ConnectionStatus, 1)
+    if connectionStatus == Tibia.Constants.ConnectionStatus.Online then
+        return true
+    else
+        return false
+    end
+end
+
 -- check if level spy is enabled
 function Tibia:IsLevelSpyEnabled()
     local levelSpyNop = tibia_readbytes(Tibia.Addresses.LevelSpy.Nop, 2)
