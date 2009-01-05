@@ -1,263 +1,350 @@
 --[[ Tibia 8.40 ]]--
 
--- z-axis
-Tibia.Constants.Client.DefaultZAxis = 7
+-- client
+Tibia.Constants.Client =
+{
+    -- z-axis
+    ZAxisDefault = 7,
 
--- rsa key
-Tibia.Constants.Client.RsaKeySize = 309
+    -- rsa key
+    RsaKeySize = 309,
 
--- rsa keys
-Tibia.Constants.Client.RsaKeyTibia      = "124710459426827943004376449897985582167801707960697037164044904862948569380850421396904597686953877022394604239428185498284169068581802277612081027966724336319448537811441719076484340922854929273517308661370727105382899118999403808045846444647284499123164879035103627004668521005328367415259939915284902061793"
-Tibia.Constants.Client.RsaKeyOpenTibia = "109120132967399429278860960508995541528237502902798129123468757937266291492576446330739696001110603907230888610072655818825358503429057592827629436413108566029093628212635953836686562675849720620786279431090218017681061521755056710823876476444260558147179707119674283982419152118103759076030616683978566631413"
+    -- rsa keys
+    RsaKeyTibia     = "124710459426827943004376449897985582167801707960697037164044904862948569380850421396904597686953877022394604239428185498284169068581802277612081027966724336319448537811441719076484340922854929273517308661370727105382899118999403808045846444647284499123164879035103627004668521005328367415259939915284902061793",
+    RsaKeyOpenTibia = "109120132967399429278860960508995541528237502902798129123468757937266291492576446330739696001110603907230888610072655818825358503429057592827629436413108566029093628212635953836686562675849720620786279431090218017681061521755056710823876476444260558147179707119674283982419152118103759076030616683978566631413"
+}
 
 -- connection status
-Tibia.Constants.ConnectionStatus.Offline = 0
-Tibia.Constants.ConnectionStatus.Online  = 8
+Tibia.Constants.ConnectionStatus =
+{
+    Offline = 0,
+    Online  = 8
+}
 
 -- statusbar
-Tibia.Constants.Statusbar.Duration = 50 -- duration to show text
+Tibia.Constants.Statusbar =
+{
+    Duration = 50 -- duration to show text
+}
 
--- level spy
-Tibia.LEVELSPY_NOP_DEFAULT = 49451
+-- map
+Tibia.Constants.Map =
+{
+    X = 18,
+    Y = 14,
+    Z = 8,
 
-Tibia.LEVELSPY_ABOVE_DEFAULT = 7
-Tibia.LEVELSPY_BELOW_DEFAULT = 2
+    OffsetTileObjectCount = 0,  -- number of objects on tile
+    OffsetTileId          = 4,
+    OffsetObjectId        = 16,
+    OffsetObjectData      = 20, -- unique id or item count
 
-Tibia.LEVELSPY_MIN = 0
-Tibia.LEVELSPY_MAX = 7
+    StepTile   = 172,
+    StepObject = 4,
 
--- name spy
-Tibia.NAMESPY_NOP_DEFAULT  = 19061
-Tibia.NAMESPY_NOP2_DEFAULT = 16501
+    MaxTiles       = 2016, -- = (18 * 14 * 8) = (x * y * z)
+    MaxTileObjects = 13
+}
 
--- show invisible creatures
-Tibia.INVISIBLE1_DEFAULT = 114
-Tibia.INVISIBLE2_DEFAULT = 117
+-- fps
+Tibia.Constants.Fps =
+{
+    OffsetLimit         = 88,
+    OffsetCurrent       = 96,
+    OffsetLimitReadOnly = 104 -- read-only
+}
 
-Tibia.INVISIBLE_PATCH = 235
+-- login servers
+Tibia.Constants.LoginServers =
+{
+    OffsetPort = 100,
 
--- full light
-Tibia.LIGHT_NOP_DEFAULT = 1406
+    Step = 112,
 
-Tibia.LIGHT_AMOUNT_DEFAULT = 128
-Tibia.LIGHT_AMOUNT_FULL    = 255
+    Max = 10
+}
 
--- minimum
-Tibia.MIN_OUTFIT           = 2    -- lowest possible outfit before client crashes
+-- creatures
+Tibia.Constants.Creatures =
+{
+    OffsetId          = 0, -- unique id
+    OffsetType        = 3,
+    OffsetOutfit      = 96,
+    OffsetOutfitHead  = 100,
+    OffsetOutfitBody  = 104,
+    OffsetOutfitLegs  = 108,
+    OffsetOutfitFeet  = 112,
+    OffsetOutfitAddon = 116,
 
--- maximum
-Tibia.MAX_MAP_TILES        = 2016 -- = (18 * 14 * 8) = (x * y * z)
-Tibia.MAX_MAP_TILE_OBJECTS = 13   -- number of objects on a tile
-Tibia.MAX_LOGIN_SERVERS    = 10
-Tibia.MAX_CREATURES        = 250
-Tibia.MAX_CONTAINERS       = 16
-Tibia.MAX_VIPS             = 100
-Tibia.MAX_HOTKEYS          = 36
-Tibia.MAX_OUTFIT           = 326  -- highest possible outfit before client crashes
-Tibia.MAX_OUTFIT_COLORS    = 132  -- possible outfit colors to choose
+    Step = 160,
 
--- distances to step between addresses in memory
-Tibia.STEP_MAP_TILE     = 172
-Tibia.STEP_MAP_OBJECT   = 4
-Tibia.STEP_LOGIN_SERVER = 112
-Tibia.STEP_CREATURE     = 160
-Tibia.STEP_VIP          = 44
-
--- offsets to variables from map pointer step
-Tibia.OFFSET_MAP_TILE_OBJECT_COUNT = 0  -- number of objects on tile
-Tibia.OFFSET_MAP_TILE_ID           = 4
-Tibia.OFFSET_MAP_OBJECT_ID         = 16
-Tibia.OFFSET_MAP_OBJECT_DATA       = 20 -- unique id OR stacked or grouped item count
-
--- offsets to variables from login server step
-Tibia.OFFSET_LOGIN_SERVER_PORT = 100
-
--- offsets to variables from creature step
-Tibia.OFFSET_CREATURE_ID           = 0 -- unique id
-Tibia.OFFSET_CREATURE_TYPE         = 3
-Tibia.OFFSET_CREATURE_OUTFIT       = 96
-Tibia.OFFSET_CREATURE_OUTFIT_HEAD  = 100
-Tibia.OFFSET_CREATURE_OUTFIT_BODY  = 104
-Tibia.OFFSET_CREATURE_OUTFIT_LEGS  = 108
-Tibia.OFFSET_CREATURE_OUTFIT_FEET  = 112
-Tibia.OFFSET_CREATURE_OUTFIT_ADDON = 116
-
--- offsets to variables from vip step
-Tibia.OFFSET_VIP_ID        = 0
-Tibia.OFFSET_VIP_NAME      = 4
-Tibia.OFFSET_VIP_IS_ONLINE = 34
-Tibia.OFFSET_VIP_ICON      = 40
+    Max = 250
+}
 
 -- creature types
-Tibia.CREATURE_TYPE_PLAYER = 0
-Tibia.CREATURE_TYPE_TARGET = 1
-Tibia.CREATURE_TYPE_NPC    = 64
+Tibia.Constants.CreatureTypes =
+{
+    Player = 0,
+    Target = 1,
+    Npc    = 64
+}
+
+-- containers
+Tibia.Constants.Containers =
+{
+    OffsetId        = 4,
+    OffsetName      = 16,
+    OffsetVolume    = 48, -- max number of items in container
+    OffsetHasParent = 52,
+    OffsetAmount    = 56, -- current number of items in container
+    OffsetItemId    = 60,
+    OffsetItemCount = 64,
+
+    Step = 492,
+    StepItem = 12,
+
+    Max = 16
+}
+
+-- vips
+Tibia.Constants.Vips =
+{
+    OffsetId       = 0,
+    OffsetName     = 4,
+    OffsetIsOnline = 34,
+    OffsetIcon     = 40,
+
+    Step = 44,
+
+    Max = 100
+}
+
+-- hotkeys
+Tibia.Constants.Hotkeys =
+{
+    Max = 36
+}
+
+-- level spy
+Tibia.Constants.LevelSpy =
+{
+    NopDefault = 49451,
+
+    AboveDefault = 7,
+    BelowDefault = 2,
+
+    Min = 0,
+    Max = 7
+}
+
+-- name spy
+Tibia.Constants.NameSpy =
+{
+    NopDefault  = 19061,
+    Nop2Default = 16501
+}
+
+-- show invisible creatures
+Tibia.Constants.Invisible =
+{
+    Value1Default = 114,
+    Value2Default = 117,
+
+    Patch         = 235
+}
+
+-- full light
+Tibia.Constants.Light =
+{
+    NopDefault = 1406,
+
+    AmountDefault = 128,
+    AmountFull    = 255
+}
 
 -- outfits
-Tibia.OUTFIT_INVISIBLE          = 0
-
-Tibia.OUTFIT_SWIMMING           = 267 -- swimming in water
-
-Tibia.OUTFIT_GAMEMASTER         = 75  -- voluntary gamemaster
-Tibia.OUTFIT_GAMEMASTER2        = 266 -- customer support gamemaster
-Tibia.OUTFIT_COMMUNITY_MANAGER  = 302 -- community manager
-
-Tibia.OUTFIT_HERO               = 73
-Tibia.OUTFIT_FERUMBRAS          = 229
-Tibia.OUTFIT_COCKROACH          = 284
-
-Tibia.OUTFIT_MALE_OLD           = 127 -- no animations
-Tibia.OUTFIT_FEMALE_OLD         = 126 -- no animations
-
-Tibia.OUTFIT_MALE_CITIZEN       = 128 -- druid
-Tibia.OUTFIT_MALE_HUNTER        = 129 -- paladin
-Tibia.OUTFIT_MALE_MAGE          = 130 -- sorcerer
-Tibia.OUTFIT_MALE_KNIGHT        = 131 -- knight
-
-Tibia.OUTFIT_MALE_NOBLEMAN      = 132
-Tibia.OUTFIT_MALE_SUMMONER      = 133
-Tibia.OUTFIT_MALE_WARRIOR       = 134
-Tibia.OUTFIT_MALE_BARBARIAN     = 143
-Tibia.OUTFIT_MALE_DRUID         = 144
-Tibia.OUTFIT_MALE_WIZARD        = 145
-Tibia.OUTFIT_MALE_ORIENTAL      = 146
-Tibia.OUTFIT_MALE_PIRATE        = 151
-Tibia.OUTFIT_MALE_ASSASSIN      = 152
-Tibia.OUTFIT_MALE_BEGGAR        = 153
-Tibia.OUTFIT_MALE_SHAMAN        = 154
-Tibia.OUTFIT_MALE_NORSEMAN      = 251
-Tibia.OUTFIT_MALE_NIGHTMARE     = 268
-Tibia.OUTFIT_MALE_JESTER        = 273
-Tibia.OUTFIT_MALE_BROTHERHOOD   = 278
-Tibia.OUTFIT_MALE_DEMONHUNTER   = 289
-Tibia.OUTFIT_MALE_YALAHARIAN    = 325
-
-Tibia.OUTFIT_FEMALE_CITIZEN     = 136 -- druid
-Tibia.OUTFIT_FEMALE_HUNTER      = 137 -- paladin
-Tibia.OUTFIT_FEMALE_SUMMONER    = 138 -- sorcerer
-Tibia.OUTFIT_FEMALE_KNIGHT      = 139 -- knight
-
-Tibia.OUTFIT_FEMALE_NOBLEMAN    = 140
-Tibia.OUTFIT_FEMALE_MAGE        = 141
-Tibia.OUTFIT_FEMALE_WARRIOR     = 142
-Tibia.OUTFIT_FEMALE_BARBARIAN   = 147
-Tibia.OUTFIT_FEMALE_DRUID       = 148
-Tibia.OUTFIT_FEMALE_WIZARD      = 149
-Tibia.OUTFIT_FEMALE_ORIENTAL    = 150
-Tibia.OUTFIT_FEMALE_PIRATE      = 155
-Tibia.OUTFIT_FEMALE_ASSASSIN    = 156
-Tibia.OUTFIT_FEMALE_BEGGAR      = 157
-Tibia.OUTFIT_FEMALE_SHAMAN      = 158
-Tibia.OUTFIT_FEMALE_NORSEMAN    = 252
-Tibia.OUTFIT_FEMALE_NIGHTMARE   = 269
-Tibia.OUTFIT_FEMALE_JESTER      = 270
-Tibia.OUTFIT_FEMALE_BROTHERHOOD = 279
-Tibia.OUTFIT_FEMALE_DEMONHUNTER = 288
-Tibia.OUTFIT_FEMALE_YALAHARIAN  = 324
-
--- male outfits
-Tibia.OUTFITS_MALE =
+Tibia.Constants.Outfits =
 {
-    Tibia.OUTFIT_MALE_OLD,
-    Tibia.OUTFIT_MALE_CITIZEN,
-    Tibia.OUTFIT_MALE_HUNTER,
-    Tibia.OUTFIT_MALE_MAGE,
-    Tibia.OUTFIT_MALE_KNIGHT,
-    Tibia.OUTFIT_MALE_NOBLEMAN,
-    Tibia.OUTFIT_MALE_SUMMONER,
-    Tibia.OUTFIT_MALE_WARRIOR,
-    Tibia.OUTFIT_MALE_BARBARIAN,
-    Tibia.OUTFIT_MALE_DRUID,
-    Tibia.OUTFIT_MALE_WIZARD,
-    Tibia.OUTFIT_MALE_ORIENTAL,
-    Tibia.OUTFIT_MALE_PIRATE,
-    Tibia.OUTFIT_MALE_ASSASSIN,
-    Tibia.OUTFIT_MALE_BEGGAR,
-    Tibia.OUTFIT_MALE_SHAMAN,
-    Tibia.OUTFIT_MALE_NORSEMAN,
-    Tibia.OUTFIT_MALE_NIGHTMARE,
-    Tibia.OUTFIT_MALE_JESTER,
-    Tibia.OUTFIT_MALE_BROTHERHOOD,
-    Tibia.OUTFIT_MALE_DEMONHUNTER,
-    Tibia.OUTFIT_MALE_YALAHARIAN
-}
+    -- possible outfit ranges before client crashes
+    Min = 2,
+    Max = 326,
 
--- female outfits
-Tibia.OUTFITS_FEMALE =
-{
-    Tibia.OUTFIT_FEMALE_OLD,
-    Tibia.OUTFIT_FEMALE_CITIZEN,
-    Tibia.OUTFIT_FEMALE_HUNTER,
-    Tibia.OUTFIT_FEMALE_SUMMONER,
-    Tibia.OUTFIT_FEMALE_KNIGHT,
-    Tibia.OUTFIT_FEMALE_NOBLEMAN,
-    Tibia.OUTFIT_FEMALE_MAGE,
-    Tibia.OUTFIT_FEMALE_WARRIOR,
-    Tibia.OUTFIT_FEMALE_BARBARIAN,
-    Tibia.OUTFIT_FEMALE_DRUID,
-    Tibia.OUTFIT_FEMALE_WIZARD,
-    Tibia.OUTFIT_FEMALE_ORIENTAL,
-    Tibia.OUTFIT_FEMALE_PIRATE,
-    Tibia.OUTFIT_FEMALE_ASSASSIN,
-    Tibia.OUTFIT_FEMALE_BEGGAR,
-    Tibia.OUTFIT_FEMALE_SHAMAN,
-    Tibia.OUTFIT_FEMALE_NORSEMAN,
-    Tibia.OUTFIT_FEMALE_NIGHTMARE,
-    Tibia.OUTFIT_FEMALE_JESTER,
-    Tibia.OUTFIT_FEMALE_BROTHERHOOD,
-    Tibia.OUTFIT_FEMALE_DEMONHUNTER,
-    Tibia.OUTFIT_FEMALE_YALAHARIAN
-}
+    -- outfits that do not exist and cause the client to crash:
+    -- 0, 1, 135, 161-191, 327+
+    Error =
+    {
+        0, 1, 135,
+        161, 162, 163, 164, 165, 166, 167, 168, 169, 170,
+        171, 172, 173, 174, 175, 176, 177, 178, 179, 180,
+        181, 182, 183, 184, 185, 186, 187, 188, 189, 190,
+        191
+    },
 
--- outfits that do not exist and cause the client to crash:
--- 0, 1, 135, 161-191, 327+
-Tibia.OUTFITS_ERROR =
-{
-    0, 1, 135,
-    161, 162, 163, 164, 165, 166, 167, 168, 169, 170,
-    171, 172, 173, 174, 175, 176, 177, 178, 179, 180,
-    181, 182, 183, 184, 185, 186, 187, 188, 189, 190,
-    191
+    Invisible         = 0,
+
+    Swimming          = 267, -- swimming in water
+
+    Gamemaster        = 75,  -- voluntary gamemaster
+    Gamemaster2       = 266, -- customer support gamemaster
+    CommunityManager  = 302, -- community manager
+
+    Hero              = 73,
+    Ferumbras         = 229,
+    Cockroach         = 284,
+
+    MaleOld           = 127, -- no animations
+    FemaleOld         = 126, -- no animations
+
+    MaleCitizen       = 128, -- druid
+    MaleHunter        = 129, -- paladin
+    MaleMage          = 130, -- sorcerer
+    MaleKnight        = 131, -- knight
+
+    MaleNobleman      = 132,
+    MaleSummoner      = 133,
+    MaleWarrior       = 134,
+    MaleBarbarian     = 143,
+    MaleDruid         = 144,
+    MaleWizard        = 145,
+    MaleOriental      = 146,
+    MalePirate        = 151,
+    MaleAssassin      = 152,
+    MaleBeggar        = 153,
+    MaleShaman        = 154,
+    MaleNorseman      = 251,
+    MaleNightmare     = 268,
+    MaleJester        = 273,
+    MaleBrotherhood   = 278,
+    MaleDemonhunter   = 289,
+    MaleYalaharian    = 325,
+
+    FemaleCitizen     = 136, -- druid
+    FemaleHunter      = 137, -- paladin
+    FemaleSummoner    = 138, -- sorcerer
+    FemaleKnight      = 139, -- knight
+
+    FemaleNobleman    = 140,
+    FemaleMage        = 141,
+    FemaleWarrior     = 142,
+    FemaleBarbarian   = 147,
+    FemaleDruid       = 148,
+    FemaleWizard      = 149,
+    FemaleOriental    = 150,
+    FemalePirate      = 155,
+    FemaleAssassin    = 156,
+    FemaleBeggar      = 157,
+    FemaleShaman      = 158,
+    FemaleNorseman    = 252,
+    FemaleNightmare   = 269,
+    FemaleJester      = 270,
+    FemaleBrotherhood = 279,
+    FemaleDemonhunter = 288,
+    FemaleYalaharian  = 324,
+
+    Male =
+    {
+        MaleOld,
+        MaleCitizen,
+        MaleHunter,
+        MaleMage,
+        MaleKnight,
+        MaleNobleman,
+        MaleSummoner,
+        MaleWarrior,
+        MaleBarbarian,
+        MaleDruid,
+        MaleWizard,
+        MaleOriental,
+        MalePirate,
+        MaleAssassin,
+        MaleBeggar,
+        MaleShaman,
+        MaleNorseman,
+        MaleNightmare,
+        MaleJester,
+        MaleBrotherhood,
+        MaleDemonhunter,
+        MaleYalaharian
+    },
+
+    Female =
+    {
+        FemaleOld,
+        FemaleCitizen,
+        FemaleHunter,
+        FemaleMage,
+        FemaleKnight,
+        FemaleNobleman,
+        FemaleSummoner,
+        FemaleWarrior,
+        FemaleBarbarian,
+        FemaleDruid,
+        FemaleWizard,
+        FemaleOriental,
+        FemalePirate,
+        FemaleAssassin,
+        FemaleBeggar,
+        FemaleShaman,
+        FemaleNorseman,
+        FemaleNightmare,
+        FemaleJester,
+        FemaleBrotherhood,
+        FemaleDemonhunter,
+        FemaleYalaharian
+    }
 }
 
 -- outfit addons
-Tibia.OUTFIT_ADDON_NONE = 0
-Tibia.OUTFIT_ADDON_1    = 1
-Tibia.OUTFIT_ADDON_2    = 2
-Tibia.OUTFIT_ADDON_3    = 3
-Tibia.OUTFIT_ADDON_BOTH = 3
+Tibia.Constants.OutfitAddons =
+{
+    None   = 0,
+    First  = 1,
+    Second = 2,
+    Both   = 3
+}
 
 -- outfit colors
-Tibia.OUTFIT_COLORS_NEWBIE = {78, 69, 58, 76}
-
--- tile ids
-Tibia.TILE_LAVA                = 727
-
-Tibia.TILE_WATER_FISH_BEGIN    = 4597
-Tibia.TILE_WATER_FISH_END      = 4602
-
-Tibia.TILE_WATER_NO_FISH_BEGIN = 4609
-Tibia.TILE_WATER_NO_FISH_END   = 4614
-
--- object ids
-Tibia.OBJECT_CREATURE = 99
-
-Tibia.OBJECT_LOCKER   = 3499
-Tibia.OBJECT_DEPOT    = 3502
-
-Tibia.OBJECT_BUSH     = 3681
-Tibia.OBJECT_BUSH2    = 3682
-
-Tibia.OBJECT_TREES =
+Tibia.Constants.OutfitColors =
 {
-    957,
-    3608, 3609, 3613, 3614, 3615, 3616, 3617, 3618, 3619, 3620,
-    3621, 3622, 3623, 3624, 3625, 3626, 3631, 3632, 3633, 3634,
-    3635, 3636, 3637, 3638, 3639, 3640, 3641, 3647, 3649, 3687,
-    3688, 3689, 3691, 3692, 3694, 3742, 3743, 3744, 3745, 3750,
-    3751, 3752, 3753, 3754, 3755, 3756, 3757, 3758, 3759, 3760,
-    3761, 3762, 3780, 3871, 3872, 3873, 3877, 3878, 3884, 3885,
-    3899, 3901, 3902, 3903, 3905, 3908, 3909, 3910, 3911, 3920,
-    3921, 5091, 5092, 5093, 5094, 5095, 5155, 5156, 5389, 5390,
-    5391, 5392, 6094, 7020, 7021, 7022, 7023, 7024
+    Max = 132, -- possible colors to choose
+
+    Newbie = {78, 69, 58, 76}
+}
+
+-- tiles
+Tibia.Constants.Tiles =
+{
+    Lava = 727,
+
+    WaterFishBegin   = 4597,
+    WaterFishEnd     = 4602,
+
+    WaterNoFishBegin = 4609,
+    WaterNoFishEnd   = 4614
+}
+
+-- objects
+Tibia.Constants.Objects =
+{
+    Creature = 99,
+
+    Locker   = 3499,
+    Depot    = 3502,
+
+    Bush     = 3681,
+    Bush2    = 3682,
+
+    Trees =
+    {
+        957,
+        3608, 3609, 3613, 3614, 3615, 3616, 3617, 3618, 3619, 3620,
+        3621, 3622, 3623, 3624, 3625, 3626, 3631, 3632, 3633, 3634,
+        3635, 3636, 3637, 3638, 3639, 3640, 3641, 3647, 3649, 3687,
+        3688, 3689, 3691, 3692, 3694, 3742, 3743, 3744, 3745, 3750,
+        3751, 3752, 3753, 3754, 3755, 3756, 3757, 3758, 3759, 3760,
+        3761, 3762, 3780, 3871, 3872, 3873, 3877, 3878, 3884, 3885,
+        3899, 3901, 3902, 3903, 3905, 3908, 3909, 3910, 3911, 3920,
+        3921, 5091, 5092, 5093, 5094, 5095, 5155, 5156, 5389, 5390,
+        5391, 5392, 6094, 7020, 7021, 7022, 7023, 7024
+    }
 }

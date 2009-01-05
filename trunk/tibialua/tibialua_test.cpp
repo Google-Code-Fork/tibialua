@@ -1,21 +1,13 @@
 /*
- * Tibia Lua Console
+ * Tibia Lua Test
  * by Evremonde
  * Last updated on 12/10/2008
  */
 
-#include "tibialua_console.h"
+#include "tibialua_test.h"
 
-int main(int argc, char *argv[])
+int main()
 {
-    if (argc != 2)
-    {
-        MessageBox(0,
-            "Usage: tibialua_console.exe script\nExample: tibialua_console.exe helloworld.lua",
-            "Error", MB_OK | MB_ICONERROR);
-        return 0;
-    }
-
     // open lua
     L = luaL_newstate();
 
@@ -29,18 +21,25 @@ int main(int argc, char *argv[])
     tibialua_register_tibia_glue(L);
 
     // initialize tibia api
-    luaL_dofile(L, "system/tibia.lua");
+    int error = luaL_dofile(L, "system/tibia.lua");
+
+    // display error
+    if (error)
+    {
+        std::cout << lua_tostring(L, -1) << std::endl;
+        lua_pop(L, 1);
+    }
 
     // execute user config script
     luaL_dofile(L, "system/autoexec.lua");
 
-    // get script name
-    std::stringstream script;
-    script << "scripts/" << argv[1];
-
-    // execute script
-    luaL_dofile(L, script.str().c_str());
+    // execute test script
+    luaL_dofile(L, "tibialua_test.lua");
 
     // close lua
     lua_close(L);
+
+    std::cin.get();
+
+    return 0;
 }

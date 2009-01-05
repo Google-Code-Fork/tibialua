@@ -1,7 +1,7 @@
-if tibia_islevelspyenabled() == true then
-    tibia_setlevelspy(false)
-    tibia_setstatusbartext("Level Spy: Off")
+if Tibia:IsLevelSpyEnabled() == true then
+    Tibia:SetLevelSpy(false)
+    Tibia:SetStatusbarText("Level Spy: Off")
 else
-    tibia_setlevelspy(true)
-    tibia_setstatusbartext("Level Spy: On")
+    Tibia:SetLevelSpy(true)
+    Tibia:SetStatusbarText("Level Spy: On")
 end

@@ -1,7 +1,7 @@
-if tibia_isshowinvisiblecreaturesenabled() == true then
-    tibia_setshowinvisiblecreatures(false)
-    tibia_setstatusbartext("Show Invisible Creatures: Off")
+if Tibia:IsShowInvisibleCreaturesEnabled() == true then
+    Tibia:SetShowInvisibleCreatures(false)
+    Tibia:SetStatusbarText("Show Invisible Creatures: Off")
 else
-    tibia_setshowinvisiblecreatures(true)
-    tibia_setstatusbartext("Show Invisible Creatures: On")
+    Tibia:SetShowInvisibleCreatures(true)
+    Tibia:SetStatusbarText("Show Invisible Creatures: On")
 end
