@@ -1,6 +1,8 @@
 #ifndef _TIBIALUA_H_
 #define _TIBIALUA_H_
 
+#include <ctime>
+
 #include <fstream>
 #include <sstream>
 #include <string>
