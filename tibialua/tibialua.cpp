@@ -89,7 +89,7 @@ void doScriptsLoad()
         vectorScripts.push_back(script);
 
         // next script id
-        scriptId += 1;
+        scriptId++;
     }
 }
 
