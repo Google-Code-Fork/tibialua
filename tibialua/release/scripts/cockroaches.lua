@@ -1,5 +1,5 @@
 -- search through creatures
-for i = Tibia.Addresses.Creatures.Begin, Tibia.Addresses.Creatures.End, Tibia.Addresses.Creatures.Step do
+for i = Tibia.Addresses.Creatures.Begin, Tibia.Addresses.Creatures.End, Tibia.Constants.Creatures.Step do
     -- get creature type
     local creatureType = tibia_readbytes(i + Tibia.Constants.Creatures.OffsetType, 1)
 
