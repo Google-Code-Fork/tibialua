@@ -1,20 +1,20 @@
 -- level spy must be enabled
-if tibia_islevelspyenabled() == false then
-    tibia_setstatusbartext("Please enable Level Spy first!")
+if Tibia:IsLevelSpyEnabled() == false then
+    Tibia:SetStatusbarText("Please enable Level Spy first!")
     return
 end
 
 -- get player z
-local playerZ = tibia_getplayerz()
+local playerZ = Tibia:GetPlayerZ()
 
 -- get ground level
 local groundLevel = 0
-if playerZ <= Z_AXIS_DEFAULT then
+if playerZ <= Tibia.Constants.Client.ZAxisDefault then
     -- above ground
-    groundLevel = LEVELSPY_ABOVE
+    groundLevel = Tibia.Addresses.LevelSpy.Above
 else
     -- below ground
-    groundLevel = LEVELSPY_BELOW
+    groundLevel = Tibia.Addresses.LevelSpy.Below
 end
 
 -- get current level
@@ -22,8 +22,8 @@ local currentLevel = tibia_readbytes(groundLevel, 1)
 
 -- get spy level
 local spyLevel = 0
-if currentLevel >= LEVELSPY_MAX then
-    spyLevel = LEVELSPY_MIN -- loop back to start
+if currentLevel >= Tibia.Constants.LevelSpy.Max then
+    spyLevel = Tibia.Constants.LevelSpy.Min -- loop back to start
 else
     spyLevel = currentLevel + 1 -- increase spy level
 end
@@ -33,11 +33,11 @@ tibia_writebytes(groundLevel, spyLevel, 1)
 
 -- calculate display level
 local displayLevel = 0
-if playerZ <= Z_AXIS_DEFAULT then
+if playerZ <= Tibia.Constants.Client.ZAxisDefault then
     displayLevel = spyLevel -- above ground
 else
-    displayLevel = spyLevel - (LEVELSPY_BELOW_DEFAULT + 1) -- below ground
+    displayLevel = spyLevel - (Tibia.Constants.LevelSpy.BelowDefault + 1) -- below ground
 end
 
 -- display level
-tibia_setstatusbartext("Level Spy: " .. displayLevel)
+Tibia:SetStatusbarText("Level Spy: " .. displayLevel)

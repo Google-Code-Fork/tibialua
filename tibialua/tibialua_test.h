@@ -1,7 +1,7 @@
-#ifndef _TIBIALUA_CONSOLE_H_
-#define _TIBIALUA_CONSOLE_H_
+#ifndef _TIBIALUA_TEST_H_
+#define _TIBIALUA_TEST_H_
 
-#include <sstream>
+#include <iostream>
 
 #include "tibialua_lua.h"
 
@@ -14,4 +14,4 @@
 // lua state
 lua_State *L;
 
-#endif // _TIBIALUA_CONSOLE_H_
+#endif // _TIBIALUA_TEST_H_

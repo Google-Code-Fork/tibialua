@@ -1,7 +1,7 @@
-if tibia_isfulllightenabled() == true then
-    tibia_setfulllight(false)
-    tibia_setstatusbartext("Full Light: Off")
+if Tibia:IsFullLightEnabled() == true then
+    Tibia:SetFullLight(false)
+    Tibia:SetstatusbarText("Full Light: Off")
 else
-    tibia_setfulllight(true)
-    tibia_setstatusbartext("Full Light: On")
+    Tibia:SetFullLight(true)
+    Tibia:SetStatusbarText("Full Light: On")
 end

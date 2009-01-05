@@ -1,2 +1,2 @@
-tibia_setplayeroutfitrandom()
-tibia_setstatusbartext("Random Outfit: " .. tibia_getplayeroutfit())
+Tibia:SetPlayerOutfitRandom()
+Tibia:SetStatusbarText("Random Outfit: " .. Tibia:GetPlayerOutfit())

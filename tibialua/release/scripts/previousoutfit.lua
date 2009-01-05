@@ -1,9 +1,9 @@
 -- get outfit
-local playerOutfit = tibia_getplayeroutfit()
+local playerOutfit = Tibia:GetPlayerOutfit()
 
 -- loop back to end
-if playerOutfit == MIN_OUTFIT then
-    playerOutfit = MAX_OUTFIT + 1
+if playerOutfit == Tibia.Constants.Outfits.Min then
+    playerOutfit = Tibia.Constants.Outfits.Max + 1
 end
 
 -- get previous outfit
@@ -11,9 +11,9 @@ while true do
     playerOutfit = playerOutfit - 1
 
     -- avoid client crash
-    if tibia_isoutfiterror(playerOutfit) == false then break end
+    if Tibia:IsOutfitError(playerOutfit) == false then break end
 end
 
 -- set outfit
-tibia_setplayeroutfit(playerOutfit)
-tibia_setstatusbartext("Previous Outfit: " .. tibia_getplayeroutfit())
+Tibia:SetPlayerOutfit(playerOutfit)
+Tibia:SetStatusbarText("Previous Outfit: " .. Tibia:GetPlayerOutfit())
