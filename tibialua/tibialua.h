@@ -15,6 +15,8 @@
 
 #include "tibialua_lua.h"
 
+#include "tibialua_iup.h"
+
 #include "tibialua_register.h"
 
 #include "resource.h"
