@@ -1,1 +1,1 @@
-windows_messagebox("Hello World!", "Tibia Lua")
+iup.Message("Tibia Lua", "Hello World!")

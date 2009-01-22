@@ -309,11 +309,17 @@ void doTrayMenuShow(HWND hwnd)
 
 void onCreate(HWND hwnd)
 {
+    // open iup
+    IupOpen(0, 0);
+
     // open lua
     L = luaL_newstate();
 
     // open lua libraries
     luaL_openlibs(L);
+
+    // open iup lua
+    iuplua_open(L);
 
     // register windows glue
     tibialua_register_windows_glue(L);
@@ -344,6 +350,9 @@ void onCreate(HWND hwnd)
 
     // create tray menu
     doTrayMenuCreate(hwnd);
+
+    // start iup
+    //IupMainLoop();
 }
 
 void onDestroy(HWND hwnd)
@@ -366,8 +375,14 @@ void onDestroy(HWND hwnd)
     // destroy tray menu
     DestroyMenu(trayMenu);
 
-    // exit
+    // close iup
+    IupClose();
+
+    // quit
     PostQuitMessage(0);
+
+    // exit process
+    ExitProcess(0);
 }
 
 void onTray(HWND hwnd, WPARAM wparam, LPARAM lparam)
@@ -532,7 +547,8 @@ LRESULT CALLBACK windowProc(HWND hwnd, UINT umsg, WPARAM wparam, LPARAM lparam)
 
 /* main function */
 
-int WINAPI WinMain(HINSTANCE hinstance, HINSTANCE hprevinstance, LPSTR cmdline, int cmdshow)
+//int WINAPI WinMain(HINSTANCE hinstance, HINSTANCE hprevinstance, LPSTR cmdline, int cmdshow)
+int main(HINSTANCE hinstance, HINSTANCE hprevinstance, LPSTR cmdline, int cmdshow)
 {
     // only allow one instance of application
     HWND applicationWindow = FindWindow(0, "Tibia Lua");
@@ -554,13 +570,14 @@ int WINAPI WinMain(HINSTANCE hinstance, HINSTANCE hprevinstance, LPSTR cmdline, 
     wc.lpszMenuName  = 0;
     wc.lpszClassName = "tibialua";
 
-    if(!RegisterClassEx(&wc))
-    {
-        MessageBox(0,
-            "Register Window Class failed!",
-            "Error", MB_OK | MB_ICONERROR);
-        return 0;
-    }
+    RegisterClassEx(&wc);
+    //if(!RegisterClassEx(&wc))
+    //{
+    //    MessageBox(0,
+    //        "Register Window Class failed!",
+    //        "Error", MB_OK | MB_ICONERROR);
+    //    return 0;
+    //}
 
     // create window
     HWND hwnd;
@@ -572,13 +589,13 @@ int WINAPI WinMain(HINSTANCE hinstance, HINSTANCE hprevinstance, LPSTR cmdline, 
         WINDOW_HEIGHT, WINDOW_WIDTH, // window dimensions
         HWND_DESKTOP, 0, hinstance, 0);
 
-    if(hwnd == 0)
-    {
-        MessageBox(0,
-            "Create Window failed!",
-            "Error", MB_OK | MB_ICONERROR);
-        return 0;
-    }
+    //if(hwnd == 0)
+    //{
+    //    MessageBox(0,
+    //        "Create Window failed!",
+    //        "Error", MB_OK | MB_ICONERROR);
+    //    return 0;
+    //}
 
     // center window
     //HWND desktopWindow = GetDesktopWindow();

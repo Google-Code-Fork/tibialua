@@ -8,11 +8,17 @@
 
 int main()
 {
+    // open iup
+    IupOpen(0, 0);
+
     // open lua
     L = luaL_newstate();
 
     // open lua libraries
     luaL_openlibs(L);
+
+    // open iup lua
+    iuplua_open(L);
 
     // register windows glue
     tibialua_register_windows_glue(L);
@@ -36,8 +42,14 @@ int main()
     // execute test script
     luaL_dofile(L, "tibialua_test.lua");
 
+    // start iup
+    //IupMainLoop();
+
     // close lua
     lua_close(L);
+
+    // close iup
+    IupClose();
 
     std::cin.get();
 

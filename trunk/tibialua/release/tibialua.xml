@@ -115,4 +115,9 @@
         <timer delay="0" startenabled="0" />
         <menu visible="1" />
     </script>
+    <script filename="setstatusbartext.lua" name="Set Statusbar Text...">
+        <hotkey id="0" name="" />
+        <timer delay="0" startenabled="0" />
+        <menu visible="1" />
+    </script>
 </scripts>
